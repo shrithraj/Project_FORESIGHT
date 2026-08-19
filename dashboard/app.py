@@ -21,37 +21,22 @@ st.set_page_config(
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-CSS_PATH = Path(__file__).resolve().parent / "style.css"
 
+CSS_PATH = BASE_DIR / "dashboard" / "assets" / "style.css"
 DATA_PATH = BASE_DIR / "data" / "processed" / "master_dataset.csv"
 REPORT_PATH = BASE_DIR / "reports" / "inventory_recommendations.csv"
 
-@st.cache_data
-def load_data():
-    df = pd.read_csv(DATA_PATH)
-    df["Date"] = pd.to_datetime(df["Date"])
-    return df
-
-@st.cache_data
-def load_report():
-    if REPORT_PATH.exists():
-        return pd.read_csv(REPORT_PATH)
-    return pd.DataFrame()
-
-df = load_data()
-risk = load_report()
 # ==========================================================
 # LOAD CSS
 # ==========================================================
 
-
 if CSS_PATH.exists():
     with open(CSS_PATH, "r", encoding="utf-8") as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
 # ==========================================================
 # LOAD DATA
 # ==========================================================
-
 
 @st.cache_data
 def load_data():
@@ -67,23 +52,6 @@ def load_report():
 
 df = load_data()
 risk = load_report()
-# ==========================================================
-# SIDEBAR
-# ==========================================================
-
-st.sidebar.image(
-    "https://img.icons8.com/color/96/combo-chart--v1.png",
-    width=70
-)
-
-st.sidebar.title("PROJECT FORESIGHT")
-
-st.sidebar.caption(
-    "AI Retail Intelligence Platform"
-)
-
-st.sidebar.markdown("---")
-
 # ==========================================================
 # FILTERS
 # ==========================================================
