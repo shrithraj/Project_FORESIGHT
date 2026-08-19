@@ -18,7 +18,7 @@ __pycache__/
 models/*.pkl
 
 # Processed data
-data/processed/
+#data/processed/
 
 # OS files
 .DS_Store
