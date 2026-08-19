@@ -1,0 +1,201 @@
+SKU_ID,Forecast,Current_Stock,Days_of_Inventory,Risk_Score,Priority,Risk,Recommendation
+SKU106,25,85,3.4,88.7,Critical,Stockout Risk,Emergency Purchase
+SKU018,18,66,3.7,87.7,Critical,Stockout Risk,Emergency Purchase
+SKU134,11,43,3.9,87.0,Critical,Stockout Risk,Emergency Purchase
+SKU021,39,180,4.6,84.7,Critical,Stockout Risk,Emergency Purchase
+SKU167,15,69,4.6,84.7,Critical,Stockout Risk,Emergency Purchase
+SKU171,37,177,4.8,84.0,Critical,Stockout Risk,Emergency Purchase
+SKU060,31,149,4.8,84.0,Critical,Stockout Risk,Emergency Purchase
+SKU008,22,107,4.9,83.7,Critical,Stockout Risk,Emergency Purchase
+SKU103,18,89,4.9,83.7,Critical,Stockout Risk,Emergency Purchase
+SKU144,11,55,5.0,83.3,Critical,Stockout Risk,Emergency Purchase
+SKU032,29,157,5.4,82.0,Critical,Stockout Risk,Emergency Purchase
+SKU063,30,163,5.4,82.0,Critical,Stockout Risk,Emergency Purchase
+SKU138,49,270,5.5,81.7,Critical,Stockout Risk,Emergency Purchase
+SKU044,18,103,5.7,81.0,Critical,Stockout Risk,Emergency Purchase
+SKU119,11,65,5.9,80.3,Critical,Stockout Risk,Emergency Purchase
+SKU152,37,221,6.0,80.0,Critical,Stockout Risk,Emergency Purchase
+SKU187,36,215,6.0,80.0,Critical,Stockout Risk,Emergency Purchase
+SKU056,11,66,6.0,80.0,Critical,Stockout Risk,Emergency Purchase
+SKU022,14,88,6.3,79.0,High,Stockout Risk,Increase Purchase Order
+SKU105,23,144,6.3,79.0,High,Stockout Risk,Increase Purchase Order
+SKU185,7,44,6.3,79.0,High,Stockout Risk,Increase Purchase Order
+SKU094,23,145,6.3,79.0,High,Stockout Risk,Increase Purchase Order
+SKU069,21,135,6.4,78.7,High,Stockout Risk,Increase Purchase Order
+SKU098,49,318,6.5,78.3,High,Stockout Risk,Increase Purchase Order
+SKU114,15,97,6.5,78.3,High,Stockout Risk,Increase Purchase Order
+SKU179,28,196,7.0,76.7,High,Healthy,Maintain Current Stock
+SKU166,16,114,7.1,76.3,High,Healthy,Maintain Current Stock
+SKU051,21,156,7.4,75.3,High,Healthy,Maintain Current Stock
+SKU087,23,170,7.4,75.3,High,Healthy,Maintain Current Stock
+SKU180,22,168,7.6,74.7,High,Healthy,Maintain Current Stock
+SKU104,16,127,7.9,73.7,High,Healthy,Maintain Current Stock
+SKU165,10,79,7.9,73.7,High,Healthy,Maintain Current Stock
+SKU135,10,80,8.0,73.3,High,Healthy,Maintain Current Stock
+SKU043,19,156,8.2,72.7,High,Healthy,Maintain Current Stock
+SKU092,40,332,8.3,72.3,High,Healthy,Maintain Current Stock
+SKU170,8,68,8.5,71.7,High,Healthy,Maintain Current Stock
+SKU078,7,61,8.7,71.0,High,Healthy,Maintain Current Stock
+SKU006,45,405,9.0,70.0,High,Healthy,Maintain Current Stock
+SKU162,16,146,9.1,69.7,High,Healthy,Maintain Current Stock
+SKU140,27,249,9.2,69.3,High,Healthy,Maintain Current Stock
+SKU158,24,220,9.2,69.3,High,Healthy,Maintain Current Stock
+SKU013,22,210,9.5,68.3,High,Healthy,Maintain Current Stock
+SKU155,36,342,9.5,68.3,High,Healthy,Maintain Current Stock
+SKU122,25,244,9.8,67.3,High,Healthy,Maintain Current Stock
+SKU057,11,108,9.8,67.3,High,Healthy,Maintain Current Stock
+SKU035,20,196,9.8,67.3,High,Healthy,Maintain Current Stock
+SKU067,41,404,9.9,67.0,High,Healthy,Maintain Current Stock
+SKU088,33,328,9.9,67.0,High,Healthy,Maintain Current Stock
+SKU173,23,233,10.1,66.3,High,Healthy,Maintain Current Stock
+SKU136,14,144,10.3,65.7,High,Healthy,Maintain Current Stock
+SKU121,15,156,10.4,65.3,High,Healthy,Maintain Current Stock
+SKU025,35,369,10.5,65.0,High,Healthy,Maintain Current Stock
+SKU073,22,235,10.7,64.3,High,Healthy,Maintain Current Stock
+SKU195,14,152,10.9,63.7,High,Healthy,Maintain Current Stock
+SKU157,18,196,10.9,63.7,High,Healthy,Maintain Current Stock
+SKU023,29,326,11.2,62.7,High,Healthy,Maintain Current Stock
+SKU139,23,259,11.3,62.3,High,Healthy,Maintain Current Stock
+SKU077,47,541,11.5,61.7,High,Healthy,Maintain Current Stock
+SKU198,33,385,11.7,61.0,High,Healthy,Maintain Current Stock
+SKU041,23,269,11.7,61.0,High,Healthy,Maintain Current Stock
+SKU003,21,247,11.8,60.7,High,Healthy,Maintain Current Stock
+SKU091,33,391,11.8,60.7,High,Healthy,Maintain Current Stock
+SKU076,9,108,12.0,60.0,High,Healthy,Maintain Current Stock
+SKU026,27,333,12.3,59.0,High,Healthy,Maintain Current Stock
+SKU039,31,386,12.5,58.3,High,Healthy,Maintain Current Stock
+SKU034,34,427,12.6,58.0,High,Healthy,Maintain Current Stock
+SKU191,14,179,12.8,57.3,High,Healthy,Maintain Current Stock
+SKU137,21,268,12.8,57.3,High,Healthy,Maintain Current Stock
+SKU129,18,231,12.8,57.3,High,Healthy,Maintain Current Stock
+SKU197,28,358,12.8,57.3,High,Healthy,Maintain Current Stock
+SKU004,28,360,12.9,57.0,High,Healthy,Maintain Current Stock
+SKU085,30,390,13.0,56.7,High,Healthy,Maintain Current Stock
+SKU164,16,209,13.1,56.3,High,Healthy,Maintain Current Stock
+SKU014,12,159,13.2,56.0,High,Healthy,Maintain Current Stock
+SKU199,41,548,13.4,55.3,High,Healthy,Maintain Current Stock
+SKU143,25,336,13.4,55.3,High,Healthy,Maintain Current Stock
+SKU193,17,227,13.4,55.3,High,Healthy,Maintain Current Stock
+SKU064,37,502,13.6,54.7,High,Healthy,Maintain Current Stock
+SKU124,22,300,13.6,54.7,High,Healthy,Maintain Current Stock
+SKU194,40,545,13.6,54.7,High,Healthy,Maintain Current Stock
+SKU125,43,591,13.7,54.3,High,Healthy,Maintain Current Stock
+SKU146,42,584,13.9,53.7,High,Healthy,Maintain Current Stock
+SKU101,32,459,14.3,52.3,High,Healthy,Maintain Current Stock
+SKU017,40,580,14.5,51.7,High,Healthy,Maintain Current Stock
+SKU066,5,73,14.6,51.3,High,Healthy,Maintain Current Stock
+SKU095,46,681,14.8,50.7,High,Healthy,Maintain Current Stock
+SKU148,39,578,14.8,50.7,High,Healthy,Maintain Current Stock
+SKU065,14,208,14.9,50.3,High,Healthy,Maintain Current Stock
+SKU160,48,716,14.9,50.3,High,Healthy,Maintain Current Stock
+SKU049,29,432,14.9,50.3,High,Healthy,Maintain Current Stock
+SKU188,25,372,14.9,50.3,High,Healthy,Maintain Current Stock
+SKU181,34,510,15.0,50.0,High,Healthy,Maintain Current Stock
+SKU113,21,314,15.0,50.0,High,Healthy,Maintain Current Stock
+SKU001,53,801,15.1,49.7,Medium,Healthy,Maintain Current Stock
+SKU068,39,588,15.1,49.7,Medium,Healthy,Maintain Current Stock
+SKU015,19,287,15.1,49.7,Medium,Healthy,Maintain Current Stock
+SKU086,11,167,15.2,49.3,Medium,Healthy,Maintain Current Stock
+SKU038,35,532,15.2,49.3,Medium,Healthy,Maintain Current Stock
+SKU029,43,662,15.4,48.7,Medium,Healthy,Maintain Current Stock
+SKU074,31,496,16.0,46.7,Medium,Healthy,Maintain Current Stock
+SKU083,32,517,16.2,46.0,Medium,Healthy,Maintain Current Stock
+SKU048,10,162,16.2,46.0,Medium,Healthy,Maintain Current Stock
+SKU036,16,260,16.2,46.0,Medium,Healthy,Maintain Current Stock
+SKU019,40,657,16.4,45.3,Medium,Healthy,Maintain Current Stock
+SKU005,34,560,16.5,45.0,Medium,Healthy,Maintain Current Stock
+SKU111,16,264,16.5,45.0,Medium,Healthy,Maintain Current Stock
+SKU178,39,653,16.7,44.3,Medium,Healthy,Maintain Current Stock
+SKU120,7,117,16.7,44.3,Medium,Healthy,Maintain Current Stock
+SKU099,13,225,17.3,42.3,Medium,Healthy,Maintain Current Stock
+SKU075,43,745,17.3,42.3,Medium,Healthy,Maintain Current Stock
+SKU174,14,242,17.3,42.3,Medium,Healthy,Maintain Current Stock
+SKU007,39,674,17.3,42.3,Medium,Healthy,Maintain Current Stock
+SKU116,10,175,17.5,41.7,Medium,Healthy,Maintain Current Stock
+SKU192,12,210,17.5,41.7,Medium,Healthy,Maintain Current Stock
+SKU071,37,648,17.5,41.7,Medium,Healthy,Maintain Current Stock
+SKU190,31,541,17.5,41.7,Medium,Healthy,Maintain Current Stock
+SKU070,8,140,17.5,41.7,Medium,Healthy,Maintain Current Stock
+SKU002,22,387,17.6,41.3,Medium,Healthy,Maintain Current Stock
+SKU117,15,266,17.7,41.0,Medium,Healthy,Maintain Current Stock
+SKU131,35,618,17.7,41.0,Medium,Healthy,Maintain Current Stock
+SKU176,24,427,17.8,40.7,Medium,Healthy,Maintain Current Stock
+SKU024,41,731,17.8,40.7,Medium,Healthy,Maintain Current Stock
+SKU050,24,433,18.0,40.0,Medium,Healthy,Maintain Current Stock
+SKU090,6,108,18.0,40.0,Medium,Healthy,Maintain Current Stock
+SKU151,19,342,18.0,40.0,Medium,Healthy,Maintain Current Stock
+SKU182,35,638,18.2,39.3,Medium,Healthy,Maintain Current Stock
+SKU100,22,407,18.5,38.3,Medium,Healthy,Maintain Current Stock
+SKU089,21,390,18.6,38.0,Medium,Healthy,Maintain Current Stock
+SKU096,26,483,18.6,38.0,Medium,Healthy,Maintain Current Stock
+SKU053,8,151,18.9,37.0,Medium,Healthy,Maintain Current Stock
+SKU055,40,769,19.2,36.0,Medium,Healthy,Maintain Current Stock
+SKU150,28,539,19.2,36.0,Medium,Healthy,Maintain Current Stock
+SKU161,21,406,19.3,35.7,Medium,Healthy,Maintain Current Stock
+SKU093,12,235,19.6,34.7,Medium,Healthy,Maintain Current Stock
+SKU046,40,789,19.7,34.3,Medium,Healthy,Maintain Current Stock
+SKU156,59,1168,19.8,34.0,Medium,Healthy,Maintain Current Stock
+SKU062,24,477,19.9,33.7,Medium,Healthy,Maintain Current Stock
+SKU183,22,446,20.3,32.3,Medium,Healthy,Maintain Current Stock
+SKU168,41,841,20.5,31.7,Medium,Healthy,Maintain Current Stock
+SKU130,27,558,20.7,31.0,Medium,Healthy,Maintain Current Stock
+SKU123,47,983,20.9,30.3,Medium,Healthy,Maintain Current Stock
+SKU108,40,849,21.2,29.3,Medium,Healthy,Maintain Current Stock
+SKU142,25,531,21.2,29.3,Medium,Healthy,Maintain Current Stock
+SKU079,22,471,21.4,28.7,Medium,Healthy,Maintain Current Stock
+SKU154,39,839,21.5,28.3,Medium,Healthy,Maintain Current Stock
+SKU107,29,632,21.8,27.3,Medium,Healthy,Maintain Current Stock
+SKU027,14,312,22.3,25.7,Medium,Healthy,Maintain Current Stock
+SKU177,9,202,22.4,25.3,Medium,Healthy,Maintain Current Stock
+SKU042,15,336,22.4,25.3,Medium,Healthy,Maintain Current Stock
+SKU128,14,313,22.4,25.3,Medium,Healthy,Maintain Current Stock
+SKU059,29,655,22.6,24.7,Low,Healthy,Maintain Current Stock
+SKU186,15,348,23.2,22.7,Low,Healthy,Maintain Current Stock
+SKU016,17,406,23.9,20.3,Low,Healthy,Maintain Current Stock
+SKU072,20,485,24.2,19.3,Low,Healthy,Maintain Current Stock
+SKU175,29,724,25.0,16.7,Low,Healthy,Maintain Current Stock
+SKU054,8,201,25.1,16.3,Low,Healthy,Maintain Current Stock
+SKU159,12,301,25.1,16.3,Low,Healthy,Maintain Current Stock
+SKU080,24,604,25.2,16.0,Low,Healthy,Maintain Current Stock
+SKU147,28,711,25.4,15.3,Low,Healthy,Maintain Current Stock
+SKU145,36,916,25.4,15.3,Low,Healthy,Maintain Current Stock
+SKU097,12,305,25.4,15.3,Low,Healthy,Maintain Current Stock
+SKU030,16,410,25.6,14.7,Low,Healthy,Maintain Current Stock
+SKU058,5,129,25.8,14.0,Low,Healthy,Maintain Current Stock
+SKU040,3,78,26.0,13.3,Low,Healthy,Maintain Current Stock
+SKU133,28,730,26.1,13.0,Low,Healthy,Maintain Current Stock
+SKU033,8,214,26.8,10.7,Low,Healthy,Maintain Current Stock
+SKU110,21,567,27.0,10.0,Low,Healthy,Maintain Current Stock
+SKU196,13,352,27.1,9.7,Low,Healthy,Maintain Current Stock
+SKU127,31,848,27.4,8.7,Low,Healthy,Maintain Current Stock
+SKU084,38,1040,27.4,8.7,Low,Healthy,Maintain Current Stock
+SKU184,47,1307,27.8,7.3,Low,Healthy,Maintain Current Stock
+SKU031,40,1110,27.8,7.3,Low,Healthy,Maintain Current Stock
+SKU141,20,563,28.2,6.0,Low,Healthy,Maintain Current Stock
+SKU012,30,856,28.5,5.0,Low,Healthy,Maintain Current Stock
+SKU020,41,1178,28.7,4.3,Low,Healthy,Maintain Current Stock
+SKU189,41,1200,29.3,2.3,Low,Healthy,Maintain Current Stock
+SKU010,45,1490,33.1,0.0,Low,Overstock Risk,Run Promotion / Reduce Purchase
+SKU045,29,900,31.0,0.0,Low,Overstock Risk,Run Promotion / Reduce Purchase
+SKU047,28,921,32.9,0.0,Low,Overstock Risk,Run Promotion / Reduce Purchase
+SKU052,16,496,31.0,0.0,Low,Overstock Risk,Run Promotion / Reduce Purchase
+SKU009,16,551,34.4,0.0,Low,Overstock Risk,Run Promotion / Reduce Purchase
+SKU011,44,1699,38.6,0.0,Low,Overstock Risk,Run Promotion / Reduce Purchase
+SKU028,23,1113,48.4,0.0,Low,Overstock Risk,Run Promotion / Reduce Purchase
+SKU037,13,476,36.6,0.0,Low,Overstock Risk,Run Promotion / Reduce Purchase
+SKU061,40,1252,31.3,0.0,Low,Overstock Risk,Run Promotion / Reduce Purchase
+SKU132,12,501,41.8,0.0,Low,Overstock Risk,Run Promotion / Reduce Purchase
+SKU115,16,484,30.2,0.0,Low,Overstock Risk,Run Promotion / Reduce Purchase
+SKU118,16,622,38.9,0.0,Low,Overstock Risk,Run Promotion / Reduce Purchase
+SKU112,7,344,49.1,0.0,Low,Overstock Risk,Run Promotion / Reduce Purchase
+SKU109,31,1255,40.5,0.0,Low,Overstock Risk,Run Promotion / Reduce Purchase
+SKU082,22,922,41.9,0.0,Low,Overstock Risk,Run Promotion / Reduce Purchase
+SKU102,13,404,31.1,0.0,Low,Overstock Risk,Run Promotion / Reduce Purchase
+SKU081,4,230,57.5,0.0,Low,Overstock Risk,Run Promotion / Reduce Purchase
+SKU126,6,231,38.5,0.0,Low,Overstock Risk,Run Promotion / Reduce Purchase
+SKU149,25,758,30.3,0.0,Low,Overstock Risk,Run Promotion / Reduce Purchase
+SKU153,3,216,72.0,0.0,Low,Overstock Risk,Run Promotion / Reduce Purchase
+SKU163,24,995,41.5,0.0,Low,Overstock Risk,Run Promotion / Reduce Purchase
+SKU169,30,1102,36.7,0.0,Low,Overstock Risk,Run Promotion / Reduce Purchase
+SKU172,39,1525,39.1,0.0,Low,Overstock Risk,Run Promotion / Reduce Purchase
+SKU200,40,1509,37.7,0.0,Low,Overstock Risk,Run Promotion / Reduce Purchase
