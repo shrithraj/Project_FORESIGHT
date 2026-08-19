@@ -14,28 +14,31 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded"
 )
+# ==========================================================
+# PATHS
+# ==========================================================
 
+from pathlib import Path
+
+# Project root folder
+BASE_DIR = Path(__file__).resolve().parents[1]
+
+# Files
+CSS_PATH = BASE_DIR / "dashboard" / "assets" / "style.css"
+DATA_PATH = BASE_DIR / "data" / "processed" / "master_dataset.csv"
+REPORT_PATH = BASE_DIR / "reports" / "inventory_recommendations.csv"
 # ==========================================================
 # LOAD CSS
 # ==========================================================
 
-css_file = Path("dashboard/assets/style.css")
 
-if css_file.exists():
-    with open(css_file) as f:
+if CSS_PATH.exists():
+    with open(CSS_PATH, "r", encoding="utf-8") as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-
 # ==========================================================
 # LOAD DATA
 # ==========================================================
 
-from pathlib import Path
-import pandas as pd
-
-BASE_DIR = Path(__file__).resolve().parents[2]
-
-DATA_PATH = BASE_DIR / "data" / "processed" / "master_dataset.csv"
-REPORT_PATH = BASE_DIR / "reports" / "inventory_recommendations.csv"
 
 @st.cache_data
 def load_data():
