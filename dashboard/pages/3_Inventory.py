@@ -17,18 +17,13 @@ st.set_page_config(
 # LOAD DATA
 # ==========================================================
 
-@st.cache_data
-def load_data():
+from pathlib import Path
 
-    df = pd.read_csv(
-        "data/processed/master_dataset.csv"
-    )
+BASE_DIR = Path(__file__).resolve().parents[2]
 
-    df["Date"] = pd.to_datetime(df["Date"])
+DATA_PATH = BASE_DIR / "data" / "processed" / "master_dataset.csv"
 
-    return df
-
-df = load_data()
+df = pd.read_csv(DATA_PATH)
 
 # ==========================================================
 # PAGE TITLE

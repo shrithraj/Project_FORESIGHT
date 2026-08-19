@@ -20,13 +20,26 @@ st.set_page_config(
 
 from pathlib import Path
 
-# Project root folder
-BASE_DIR = Path(__file__).resolve().parents[1]
+BASE_DIR = Path(__file__).resolve().parent.parent
+CSS_PATH = Path(__file__).resolve().parent / "style.css"
 
-# Files
-CSS_PATH = BASE_DIR / "dashboard" / "assets" / "style.css"
 DATA_PATH = BASE_DIR / "data" / "processed" / "master_dataset.csv"
 REPORT_PATH = BASE_DIR / "reports" / "inventory_recommendations.csv"
+
+@st.cache_data
+def load_data():
+    df = pd.read_csv(DATA_PATH)
+    df["Date"] = pd.to_datetime(df["Date"])
+    return df
+
+@st.cache_data
+def load_report():
+    if REPORT_PATH.exists():
+        return pd.read_csv(REPORT_PATH)
+    return pd.DataFrame()
+
+df = load_data()
+risk = load_report()
 # ==========================================================
 # LOAD CSS
 # ==========================================================

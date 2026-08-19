@@ -17,16 +17,14 @@ st.set_page_config(
 # LOAD DATA
 # ==========================================================
 
-@st.cache_data
-def load_data():
+from pathlib import Path
 
-    risk = pd.read_csv(
-        "reports/inventory_risk.csv"
-    )
+BASE_DIR = Path(__file__).resolve().parents[2]
 
-    return risk
+DATA_PATH = BASE_DIR / "data" / "processed" / "master_dataset.csv"
 
-risk = load_data()
+df = pd.read_csv(DATA_PATH)
+risk = df
 
 # ==========================================================
 # PAGE TITLE
