@@ -29,8 +29,13 @@ if css_file.exists():
 # LOAD DATA
 # ==========================================================
 
-DATA_PATH = Path("data/processed/master_dataset.csv")
-REPORT_PATH = Path("reports/inventory_recommendations.csv")
+from pathlib import Path
+import pandas as pd
+
+BASE_DIR = Path(__file__).resolve().parents[2]
+
+DATA_PATH = BASE_DIR / "data" / "processed" / "master_dataset.csv"
+REPORT_PATH = BASE_DIR / "reports" / "inventory_recommendations.csv"
 
 @st.cache_data
 def load_data():
@@ -46,7 +51,6 @@ def load_report():
 
 df = load_data()
 risk = load_report()
-
 # ==========================================================
 # SIDEBAR
 # ==========================================================
