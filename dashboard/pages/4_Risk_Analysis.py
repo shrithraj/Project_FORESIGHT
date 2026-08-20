@@ -28,7 +28,20 @@ if not DATA_PATH.exists():
     st.stop()
 
 df = pd.read_csv(DATA_PATH)
+df["Risk"] = "Balanced"
+
+df.loc[
+    df["Current_Stock"] <= df["Safety_Stock"],
+    "Risk"
+] = "Stockout Risk"
+
+df.loc[
+    df["Current_Stock"] > df["Reorder_Point"] * 2,
+    "Risk"
+] = "Overstock Risk"
+
 risk = df
+
 
 # ==========================================================
 # PAGE TITLE

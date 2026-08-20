@@ -199,6 +199,14 @@ st.divider()
 # NEXT 30 DAYS FORECAST
 # ==========================================================
 
+forecast_df["Date"] = pd.to_datetime(
+    forecast_df["Date"],
+    errors="coerce"
+)
+
+forecast_df = forecast_df.dropna(subset=["Date"])
+forecast_df = forecast_df.sort_values("Date")
+
 st.markdown("## 🔮 Next 30 Days Forecast")
 
 future_dates = pd.date_range(
@@ -211,17 +219,12 @@ last_value = forecast_df["Forecast"].iloc[-1]
 future_values = []
 
 for i in range(30):
+    future_values.append(round(last_value + (i * 0.8), 2))
 
-    future_values.append(
-        round(last_value + (i * 0.8), 2)
-    )
-
-future = pd.DataFrame(
-    {
-        "Date": future_dates,
-        "Forecast": future_values
-    }
-)
+future = pd.DataFrame({
+    "Date": future_dates,
+    "Forecast": future_values
+})
 
 fig = px.area(
     future,
@@ -231,17 +234,11 @@ fig = px.area(
     color_discrete_sequence=["#16A34A"]
 )
 
-fig.update_layout(
-    height=450
-)
+fig.update_layout(height=450)
 
-st.plotly_chart(
-    fig,
-    use_container_width=True
-)
+st.plotly_chart(fig, width="stretch")
 
 st.divider()
-
 # ==========================================================
 # FORECAST BY CATEGORY
 # ==========================================================

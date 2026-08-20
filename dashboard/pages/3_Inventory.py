@@ -62,7 +62,13 @@ filtered = df[
     (df["Category"].isin(category))
     &
     (df["Season"].isin(season))
-]
+].copy()
+
+# Convert Date column to datetime
+filtered["Date"] = pd.to_datetime(
+    filtered["Date"],
+    errors="coerce"
+)
 
 # ==========================================================
 # KPI CALCULATIONS
@@ -448,8 +454,16 @@ st.divider()
 # ==========================================================
 # INVENTORY HEATMAP
 # ==========================================================
-
 st.markdown("## 🔥 Inventory Heatmap")
+
+# Convert Date column to datetime
+filtered["Date"] = pd.to_datetime(
+    filtered["Date"],
+    errors="coerce"
+)
+
+# Remove invalid dates
+filtered = filtered.dropna(subset=["Date"])
 
 heat = (
     filtered.assign(
@@ -465,12 +479,13 @@ heat = (
 )
 
 month_order = [
-    "January","February","March","April",
-    "May","June","July","August",
-    "September","October","November","December"
+    "January", "February", "March", "April",
+    "May", "June", "July", "August",
+    "September", "October", "November", "December"
 ]
 
 existing_months = [m for m in month_order if m in heat.columns]
+
 heat = heat[existing_months]
 
 fig = px.imshow(
@@ -480,17 +495,14 @@ fig = px.imshow(
     text_auto=".0f"
 )
 
-fig.update_layout(
-    height=550
-)
+fig.update_layout(height=550)
 
 st.plotly_chart(
     fig,
-    use_container_width=True
+    width="stretch"
 )
 
 st.divider()
-
 # ==========================================================
 # INVENTORY RECOMMENDATIONS
 # ==========================================================
