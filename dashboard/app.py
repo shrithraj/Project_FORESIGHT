@@ -126,21 +126,6 @@ filtered = df[
     (df["Holiday"].isin(holiday))
 ]
 
-# ==========================================================
-# EXECUTIVE HEADER
-# ==========================================================
-
-st.markdown(
-"""
-# 🛒 PROJECT FORESIGHT
-
-### Executive Retail Intelligence Dashboard
-
-AI Powered Demand Forecasting & Inventory Intelligence Platform
-
----
-"""
-)
 
 # ==========================================================
 # KPI CALCULATIONS
@@ -158,7 +143,7 @@ avg_price = filtered["Unit_Price"].mean()
 
 avg_stock = filtered["Current_Stock"].mean()
 
-forecast_accuracy = 95.3
+
 
 inventory_health = (
     (
@@ -173,7 +158,7 @@ inventory_health = (
 
 st.markdown("## 📊 Executive Performance Overview")
 
-kpi1, kpi2, kpi3, kpi4, kpi5, kpi6 = st.columns(6)
+kpi1, kpi2, kpi3, kpi4, kpi5 = st.columns(5)
 
 kpi1.metric(
     "💰 Revenue",
@@ -195,12 +180,9 @@ kpi4.metric(
     total_categories
 )
 
-kpi5.metric(
-    "🤖 Model Accuracy",
-    f"{forecast_accuracy:.1f}%"
-)
 
-kpi6.metric(
+
+kpi5.metric(
     "📦 Inventory Health",
     f"{inventory_health:.1f}%"
 )
@@ -663,7 +645,7 @@ st.success(f"""
 
 📦 Inventory Health Score: **{inventory_health:.1f}%**
 
-🤖 Forecast Accuracy: **95.3%**
+
 
 🎯 {promotion_text}
 """)

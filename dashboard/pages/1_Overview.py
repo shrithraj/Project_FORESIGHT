@@ -557,6 +557,12 @@ st.divider()
 # ==========================================================
 # WEEKLY SALES HEATMAP
 # ==========================================================
+filtered = filtered.copy()
+
+filtered["Date"] = pd.to_datetime(
+    filtered["Date"],
+    errors="coerce"
+)
 
 st.markdown("## 🔥 Weekly Sales Heatmap")
 
@@ -566,7 +572,7 @@ heat = (
         Month=filtered["Date"].dt.month_name()
     )
     .pivot_table(
-        values="Revenue",
+        values="Revenue",      # Change to Sales or Demand if Revenue doesn't exist
         index="Weekday",
         columns="Month",
         aggfunc="sum",
@@ -593,13 +599,11 @@ fig = px.imshow(
     text_auto=".2s"
 )
 
-fig.update_layout(
-    height=520
-)
+fig.update_layout(height=520)
 
 st.plotly_chart(
     fig,
-    use_container_width=True
+    width="stretch"
 )
 
 st.divider()

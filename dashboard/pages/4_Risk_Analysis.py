@@ -69,7 +69,23 @@ risk_filter = st.sidebar.multiselect(
 
 filtered = risk[
     risk["Risk"].isin(risk_filter)
-]
+].copy()
+
+stockout = len(filtered[filtered["Risk"] == "Stockout Risk"])
+balanced = len(filtered[filtered["Risk"] == "Balanced"])
+overstock = len(filtered[filtered["Risk"] == "Overstock Risk"])
+
+total_products = filtered["SKU_ID"].nunique()
+
+if "Current_Stock" in filtered.columns:
+    avg_current_stock = filtered["Current_Stock"].mean()
+else:
+    avg_current_stock = 0
+
+if "Current_Stock" in filtered.columns:
+    avg_current_stock = filtered["Current_Stock"].mean()
+else:
+    avg_current_stock = 0
 
 # ==========================================================
 # KPI CALCULATIONS
@@ -95,7 +111,10 @@ overstock = len(
 
 total_products = filtered["SKU_ID"].nunique()
 
-avg_forecast = filtered["Forecast"].mean()
+if "Current_Stock" in filtered.columns:
+    avg_current_stock = filtered["Current_Stock"].mean()
+else:
+    avg_current_stock = 0
 
 risk_score = (
     (
@@ -103,7 +122,6 @@ risk_score = (
         max(len(filtered), 1)
     ) * 100
 )
-
 # ==========================================================
 # EXECUTIVE KPI DASHBOARD
 # ==========================================================
@@ -133,8 +151,8 @@ k4.metric(
 )
 
 k5.metric(
-    "📈 Avg Forecast",
-    f"{avg_forecast:.1f}"
+    "📈 Avg Current Stock",
+    f"{avg_current_stock:.1f}"
 )
 
 st.divider()
@@ -206,23 +224,23 @@ with left:
     )
 
 # ----------------------------------------------------------
-# Forecast Distribution
+# Units Sold Distribution
 # ----------------------------------------------------------
 
 with right:
 
     fig = px.histogram(
-        filtered,
-        x="Forecast",
-        nbins=25,
-        color="Risk",
-        title="Forecast Distribution",
-        color_discrete_map={
-            "Stockout Risk": "#EF4444",
-            "Balanced": "#FACC15",
-            "Overstock Risk": "#22C55E"
-        }
-    )
+    filtered,
+    x="Units_Sold",
+    nbins=25,
+    color="Risk",
+    title="Units Sold Distribution",
+    color_discrete_map={
+        "Stockout Risk":"#EF4444",
+        "Balanced":"#FACC15",
+        "Overstock Risk":"#22C55E"
+    }
+)
 
     fig.update_layout(height=450)
 
@@ -234,24 +252,24 @@ with right:
 st.divider()
 
 # ==========================================================
-# TOP FORECAST PRODUCTS
+# TOP Current Stock PRODUCTS
 # ==========================================================
 
-st.markdown("## 📈 Top Forecasted Products")
+st.markdown("## 📈 Top Best Selling  Products")
 
 top20 = (
     filtered
     .sort_values(
-        "Forecast",
-        ascending=False
-    )
+    "Units_Sold",
+    ascending=False
+)
     .head(20)
 )
 
 fig = px.bar(
     top20,
     x="SKU_ID",
-    y="Forecast",
+    y="Units_Sold",
     color="Risk",
     text_auto=".2f",
     color_discrete_map={
@@ -259,13 +277,13 @@ fig = px.bar(
         "Balanced":"#FACC15",
         "Overstock Risk":"#22C55E"
     },
-    title="Top 20 Forecasted Products"
+    title="Top 20 Best Selling  Products"
 )
 
 fig.update_layout(
     height=500,
     xaxis_title="Product",
-    yaxis_title="Forecast Demand"
+    yaxis_title="Current Stock"
 )
 
 st.plotly_chart(
@@ -315,18 +333,20 @@ if "Category" in filtered.columns:
 
 st.divider()
 
+
+
 # ==========================================================
-# FORECAST VS CURRENT STOCK
+# CURRENT STOCK VS UNITS SOLD
 # ==========================================================
 
 if "Current_Stock" in filtered.columns:
 
-    st.markdown("## 📉 Forecast vs Current Stock")
+    st.markdown("## 📉 Current Stock vs Units Sold")
 
     compare = (
         filtered
         .sort_values(
-            "Forecast",
+            "Units_Sold",
             ascending=False
         )
         .head(25)
@@ -345,20 +365,22 @@ if "Current_Stock" in filtered.columns:
     fig.add_trace(
         go.Bar(
             x=compare["SKU_ID"],
-            y=compare["Forecast"],
-            name="Forecast"
+            y=compare["Units_Sold"],
+            name="Units Sold"
         )
     )
 
     fig.update_layout(
         barmode="group",
         height=500,
-        title="Current Stock vs Forecast"
+        title="Current Stock vs Units Sold",
+        xaxis_title="SKU ID",
+        yaxis_title="Quantity"
     )
 
     st.plotly_chart(
         fig,
-        use_container_width=True
+        width="stretch"
     )
 
 st.divider()
@@ -468,7 +490,7 @@ if not stockout_df.empty:
     top_stockout = (
         stockout_df
         .sort_values(
-            "Forecast",
+            "Current_Stock",
             ascending=False
         )
         .head(15)
@@ -477,8 +499,8 @@ if not stockout_df.empty:
     fig = px.bar(
         top_stockout,
         x="SKU_ID",
-        y="Forecast",
-        color="Forecast",
+        y="Current Stock",
+        color="Current Stock"   ,
         color_continuous_scale="Reds",
         text_auto=".1f",
         title="Highest Stockout Risk Products"
@@ -499,6 +521,7 @@ else:
 
 st.divider()
 
+
 # ==========================================================
 # OVERSTOCK ANALYSIS
 # ==========================================================
@@ -511,39 +534,55 @@ overstock_df = filtered[
 
 if not overstock_df.empty:
 
-    top_overstock = (
-        overstock_df
-        .sort_values(
-            "Forecast"
+    # Use Forecast if available, otherwise Current Stock
+    if "Current Stock" in overstock_df.columns:
+
+        top_overstock = (
+            overstock_df
+            .sort_values("Current Stock", ascending=False)
+            .head(15)
         )
-        .head(15)
-    )
 
-    fig = px.bar(
-        top_overstock,
-        x="SKU_ID",
-        y="Forecast",
-        color="Forecast",
-        color_continuous_scale="Greens",
-        text_auto=".1f",
-        title="Highest Overstock Products"
-    )
+        fig = px.bar(
+            top_overstock,
+            x="SKU_ID",
+            y="Current Stock",
+            color="Current Stock",
+            color_continuous_scale="Greens",
+            text_auto=".1f",
+            title="Highest Overstock Products"
+        )
 
-    fig.update_layout(
-        height=450
-    )
+    else:
+
+        top_overstock = (
+            overstock_df
+            .sort_values("Current_Stock", ascending=False)
+            .head(15)
+        )
+
+        fig = px.bar(
+            top_overstock,
+            x="SKU_ID",
+            y="Current_Stock",
+            color="Current_Stock",
+            color_continuous_scale="Greens",
+            text_auto=".1f",
+            title="Highest Overstock Products"
+        )
+
+    fig.update_layout(height=450)
 
     st.plotly_chart(
         fig,
-        use_container_width=True
+        width="stretch"
     )
 
 else:
 
-    st.success("No products are currently classified as Overstock Risk.")
+    st.success("✅ No products are currently classified as Overstock Risk.")
 
 st.divider()
-
 # ==========================================================
 # INVENTORY RISK REPORT
 # ==========================================================
@@ -553,7 +592,7 @@ st.markdown("## 📋 Inventory Risk Report")
 display_columns = [
     "SKU_ID",
     "Risk",
-    "Forecast",
+    "Revenue",
     "Current_Stock",
     "Safety_Stock",
     "Reorder_Point"
@@ -602,8 +641,8 @@ d2.metric(
 )
 
 d3.metric(
-    "Average Forecast",
-    f"{filtered['Forecast'].mean():.2f}"
+    "Average Units Sold",
+    f"{filtered['Units_Sold'].mean():.2f}"
 )
 
 d4.metric(
