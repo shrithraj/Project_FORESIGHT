@@ -16,12 +16,15 @@ st.set_page_config(
 # ==========================================================
 # LOAD DATA
 # ==========================================================
-
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parents[2]
 
 DATA_PATH = BASE_DIR / "data" / "processed" / "master_dataset.csv"
+
+if not DATA_PATH.exists():
+    st.error(f"Dataset not found:\n{DATA_PATH}")
+    st.stop()
 
 df = pd.read_csv(DATA_PATH)
 

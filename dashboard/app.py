@@ -17,15 +17,13 @@ st.set_page_config(
 # ==========================================================
 # PATHS
 # ==========================================================
-
 from pathlib import Path
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parents[1]
 
-CSS_PATH = BASE_DIR / "dashboard" / "assets" / "style.css"
 DATA_PATH = BASE_DIR / "data" / "processed" / "master_dataset.csv"
 REPORT_PATH = BASE_DIR / "reports" / "inventory_recommendations.csv"
-
+CSS_PATH = BASE_DIR / "dashboard" / "assets" / "style.css"
 # ==========================================================
 # LOAD CSS
 # ==========================================================
